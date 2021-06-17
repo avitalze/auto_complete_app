@@ -6,12 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/AutoComplete")
 public class AutoCompleteController {
-    private Trie paEmulatorEngine=new Trie();
+    List <String> tempList=new ArrayList<>();
+    private Trie paEmulatorEngine=new Trie(tempList);
 
 
     // ----- for check
