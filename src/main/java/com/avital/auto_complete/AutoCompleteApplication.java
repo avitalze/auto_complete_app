@@ -9,7 +9,12 @@ import java.io.InputStream;
 public class AutoCompleteApplication {
 
 	public static void main(String[] args) {
+
 		// Load the provided list of names to an H2 database
+
+//		readText();
+
+
 		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		InputStream is = classloader.getResourceAsStream("BoyNames.txt");
 
@@ -19,5 +24,7 @@ public class AutoCompleteApplication {
 
 		SpringApplication.run(AutoCompleteApplication.class, args);
 	}
+
+
 
 }

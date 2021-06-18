@@ -9,8 +9,7 @@ public class Trie {
     class TrieNode{
         private boolean isWord;
         private HashMap<Character,TrieNode> children;
-        //        Map<Character, TrieNode> children;
-        private char c; // ?
+        private char c;
 
         public TrieNode(char c) {
             this.c = c;
@@ -78,6 +77,7 @@ public class Trie {
     }
 
     public List<String> suggest(String prefix) {
+        // whre to put - tp lowwer case
         List<String> list = new ArrayList<>();
         TrieNode lastNode = root;
         StringBuffer curr = new StringBuffer();
