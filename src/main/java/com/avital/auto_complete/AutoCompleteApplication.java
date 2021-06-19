@@ -1,9 +1,12 @@
 package com.avital.auto_complete;
 
+import com.avital.auto_complete.dao.NameRepository;
+import com.avital.auto_complete.modle.Name;
+import com.avital.auto_complete.service.Initializer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.io.InputStream;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class AutoCompleteApplication {
@@ -12,19 +15,9 @@ public class AutoCompleteApplication {
 
 		// Load the provided list of names to an H2 database
 
-//		readText();
-
-
-		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-		InputStream is = classloader.getResourceAsStream("BoyNames.txt");
-
-//		URL url = Resources.getResource("BoyNames.txt");
-//		String text = Resources.toString(url, StandardCharsets.UTF_8);
-
-
 		SpringApplication.run(AutoCompleteApplication.class, args);
-	}
 
+	}
 
 
 }

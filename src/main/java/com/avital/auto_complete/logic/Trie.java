@@ -80,12 +80,18 @@ public class Trie {
         // whre to put - tp lowwer case
         List<String> list = new ArrayList<>();
         TrieNode lastNode = root;
+        char raelChar;
         StringBuffer curr = new StringBuffer();
         for (char c : prefix.toCharArray()) {
-            lastNode = lastNode.children.get(c);
+            lastNode = lastNode.children.get(Character.toUpperCase(c));
+            raelChar=Character.toUpperCase(c);
+            if(lastNode==null){
+                lastNode = lastNode.children.get(Character.toLowerCase(c));
+                raelChar=Character.toLowerCase(c);
+            }
             if (lastNode == null)
                 return list;
-            curr.append(c);
+            curr.append(raelChar);
         }
         suggestHelper(lastNode, list, curr);
         return list;

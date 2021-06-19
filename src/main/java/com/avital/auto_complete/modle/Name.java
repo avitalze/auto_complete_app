@@ -10,9 +10,8 @@ public class Name {
     @Id
     String firstName;
 
-    public Name(){
+    public Name(){    }
 
-    }
     public Name(String firstName) {
         this.firstName = firstName;
     }
