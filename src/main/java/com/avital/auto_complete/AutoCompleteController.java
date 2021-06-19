@@ -21,15 +21,13 @@ public class AutoCompleteController {
 
     @GetMapping("/getOptions")
     public List<String> getCoralStatus(@RequestParam String prefix) {
-        // URL : http://localhost:9090/AutoComplete/getOptions?prefix=J
-        // it case sensative !
+        // URL exe : http://localhost:9090/AutoComplete/getOptions?prefix=J
         init.initializTrie();
         List<String> allSuggests= Initializer.trie.suggest(prefix);
         if(allSuggests.size()==0){
-            allSuggests.add("N  o match");
+            allSuggests.add("No match");
         }
         return allSuggests;
     }
-
 
 }

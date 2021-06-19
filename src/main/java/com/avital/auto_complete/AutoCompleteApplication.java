@@ -12,10 +12,7 @@ import org.springframework.context.annotation.Bean;
 public class AutoCompleteApplication {
 
 	public static void main(String[] args) {
-
-		// Load the provided list of names to an H2 database
-
-		SpringApplication.run(AutoCompleteApplication.class, args);
+			SpringApplication.run(AutoCompleteApplication.class, args);
 
 	}
 

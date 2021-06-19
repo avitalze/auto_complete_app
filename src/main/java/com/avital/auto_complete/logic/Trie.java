@@ -77,21 +77,17 @@ public class Trie {
     }
 
     public List<String> suggest(String prefix) {
-        // whre to put - tp lowwer case
         List<String> list = new ArrayList<>();
         TrieNode lastNode = root;
-        char raelChar;
+        char realChar;
         StringBuffer curr = new StringBuffer();
         for (char c : prefix.toCharArray()) {
-            lastNode = lastNode.children.get(Character.toUpperCase(c));
-            raelChar=Character.toUpperCase(c);
-            if(lastNode==null){
-                lastNode = lastNode.children.get(Character.toLowerCase(c));
-                raelChar=Character.toLowerCase(c);
-            }
-            if (lastNode == null)
+            lastNode = lastNode.children.get(c);
+//            realChar=Character.toUpperCase(c);
+            if (lastNode ==null)
                 return list;
-            curr.append(raelChar);
+//            realChar= upperCase==null? Character.toLowerCase(c): Character.toUpperCase(c);
+            curr.append(c);
         }
         suggestHelper(lastNode, list, curr);
         return list;

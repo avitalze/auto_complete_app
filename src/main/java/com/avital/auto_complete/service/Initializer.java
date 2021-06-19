@@ -15,7 +15,7 @@ import java.util.Scanner;
 @Service
 public class Initializer {
     @Autowired
-    NameRepository nameRepo;
+    private NameRepository nameRepo;
     private String path="src/main/resources/BoyNames.txt";
     public static Trie trie;
     private boolean inited=false;
